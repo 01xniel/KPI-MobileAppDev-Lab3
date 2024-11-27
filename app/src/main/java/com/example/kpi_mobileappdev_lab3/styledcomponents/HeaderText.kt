@@ -1,4 +1,4 @@
-package com.example.kpi_mobileappdev_lab3.screens.components
+package com.example.kpi_mobileappdev_lab3.styledcomponents
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -6,8 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
+// компонент для відображення заголовків
 @Composable
-fun HeaderTextComponent(text: String, modifier: Modifier = Modifier) {
+fun HeaderText(text: String, modifier: Modifier = Modifier) {
     Text(
         text,
         fontWeight = FontWeight.Bold,
