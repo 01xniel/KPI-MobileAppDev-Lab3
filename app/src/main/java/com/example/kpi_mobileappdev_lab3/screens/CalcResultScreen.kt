@@ -30,6 +30,8 @@ fun CalcResultScreen(
     netProfit: String,
     toInputScreen: () -> Unit
 ) {
+    // головний контейнер екрану для виведення результатів розрахунку прибутку сонячних
+    // електростанцій з встановленою системою прогнозування сонячної потужності
     Column (
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,

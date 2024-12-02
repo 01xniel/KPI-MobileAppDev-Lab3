@@ -8,7 +8,8 @@ import kotlin.math.exp
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-// клас, що представляє параметри калькулятора, а також методи для розрахунку результатів
+// клас, що представляє параметри калькулятора, а також містить методи для розрахунку
+// прибутку сонячних електростанцій з встановленою системою прогнозування сонячної потужності
 @Parcelize
 data class CalcParameters(
     val averageDailyCapacity: String = "5.0",

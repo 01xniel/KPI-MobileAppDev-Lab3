@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+// компонент для відображення кнопки
 @Composable
 fun CustomButton(
     onClickAction: () -> Unit,

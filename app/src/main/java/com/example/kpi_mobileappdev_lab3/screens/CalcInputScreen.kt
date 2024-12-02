@@ -28,7 +28,7 @@ import com.example.kpi_mobileappdev_lab3.styledcomponents.HeaderText
 import com.example.kpi_mobileappdev_lab3.styledcomponents.CustomTextField
 import com.example.kpi_mobileappdev_lab3.styledcomponents.BodyText
 
-// функція перевірки валідності введеного значення в текстовому полі
+// функція перевірки коректності введеного значення в текстовому полі
 fun isNewValueValid(value: String): Boolean {
     return if (value.isEmpty()) {
         true
@@ -46,14 +46,14 @@ fun CalcInputScreen(
     // змінна для зберігання параметрів калькулятора
     var calcParameters by rememberSaveable { mutableStateOf(CalcParameters()) }
 
-    // hashmap для зберігання міток текстових полів калькулятора у вигляді ключ-значення
+    // назви параметрів
     val textFieldLabels = hashMapOf(
         "averageDailyCapacity" to "Середньодобова потужність (МВт)",
         "electricityCost" to "Вартість електроенергії (грн/кВт⋅год)",
         "standardDeviation" to "Середньоквадратичне відхилення (МВт)"
     )
 
-    // отримання поточного контексту
+    // поточний контекст застосунку
     val context = LocalContext.current
 
     // головний контейнер екрану для введення значень калькулятора
@@ -73,7 +73,7 @@ fun CalcInputScreen(
         Spacer(modifier = Modifier.height(16.dp))
         BodyText(
             text = AnnotatedString("Калькулятор розрахунку прибутку сонячних електростанцій з " +
-                    "встановленою системою прогнозування сонячної потужності."),
+                    "встановленою системою прогнозування сонячної потужності"),
             modifier = Modifier.fillMaxWidth(0.8f)
         )
 
@@ -116,8 +116,8 @@ fun CalcInputScreen(
         CustomButton(
             onClickAction = {
                 if (calcParameters.areFieldsNotEmpty()) {
-                    // якщо всі параметри заповнені, то здійснюються розрахунки та
-                    // перехід до сторінки з результатами
+                    // якщо всі параметри заповнені, то виконуються обчислення, після чого
+                    // здійснюється перехід до сторінки з результатами
                     val (profit, electricityNoImbalance, penalty,
                         electricityImbalance, netProfit) = calcParameters.evaluate()
                     toCalcResultScreen("result/$profit/$electricityNoImbalance/" +
